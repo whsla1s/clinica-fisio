@@ -1,0 +1,163 @@
+<section class="prontuario-form ortopedico-form">
+    <h2>Prontuário Ortopédico - Ficha de Avaliação</h2>
+
+    <fieldset class="form-section">
+        <legend>1. Anamnese</legend>
+
+        <div class="form-group full-width">
+            <label for="queixa-principal">Queixa Principal:</label>
+            <textarea id="queixa-principal" rows="2"></textarea>
+        </div>
+
+        <div class="form-group full-width">
+            <label for="hda">História da Doença Atual (HDA):</label>
+            <textarea id="hda" rows="3"></textarea>
+        </div>
+
+        <div class="form-group full-width">
+            <label for="hdp">História da Doença Pregressa (HDP):</label>
+            <textarea id="hdp" rows="2"></textarea>
+        </div>
+
+        <div class="form-group half-width">
+            <label for="comorbidades">Comorbidades:</label>
+            <input type="text" id="comorbidades">
+        </div>
+
+        <div class="form-group half-width">
+            <label for="af">Antecedentes Familiares (AF):</label>
+            <input type="text" id="af">
+        </div>
+
+        <div class="form-group full-width">
+            <label for="medicamentos">Medicamentos em uso:</label>
+            <input type="text" id="medicamentos">
+        </div>
+
+        <div class="form-group half-width checkbox-group">
+            <label>Queixas nos últimos 12 meses?</label>
+            <input type="radio" id="queixa-sim" name="queixa-12m" value="Sim"> <label for="queixa-sim">Sim</label>
+            <input type="radio" id="queixa-nao" name="queixa-12m" value="Não" checked> <label
+                for="queixa-nao">Não</label>
+            <input type="number" placeholder="Quantas?" min="0" style="width: 80px; margin-left: 10px;">
+        </div>
+
+        <div class="form-group half-width vitals-group">
+            <label>Sinais Vitais:</label>
+            <div>
+                PA: <input type="text" placeholder="x/x mmHg">
+                FC: <input type="text" placeholder="x bpm">
+                SpO2: <input type="text" placeholder="x %">
+            </div>
+        </div>
+    </fieldset>
+
+    <fieldset class="form-section">
+        <legend>2. Exames Complementares</legend>
+        <div class="form-group full-width">
+            <textarea id="exames-complementares" rows="2"
+                placeholder="Ex: Densitometria Óssea, Radiografia..."></textarea>
+        </div>
+    </fieldset>
+
+    <fieldset class="form-section">
+        <legend>3. Exame Físico</legend>
+
+        <div class="form-group half-width checkbox-group">
+            <label>Nível de Consciência:</label>
+            <input type="checkbox" id="lucido-orientado" name="consciencia-lucido"> <label
+                for="lucido-orientado">Lúcido-Orientado</label><br>
+            <input type="checkbox" id="lucido-desorientado" name="consciencia-desorientado"> <label
+                for="lucido-desorientado">Desorientado</label><br>
+            <input type="checkbox" id="lucido-momentos"> <label for="lucido-momentos">Lúcido com momentos de
+                desorientação</label>
+            <input type="text" placeholder="Outros" style="margin-top: 5px;">
+        </div>
+
+        <div class="form-group half-width checkbox-group">
+            <label>Estado Emocional:</label>
+            <div>
+                <input type="checkbox" id="emoc-calmo"> <label for="emoc-calmo">Calmo</label>
+                <input type="checkbox" id="emoc-agitado"> <label for="emoc-agitado">Agitado</label>
+                <input type="checkbox" id="emoc-depressivo"> <label for="emoc-depressivo">Depressivo</label>
+            </div>
+            <div>
+                <input type="checkbox" id="emoc-ansioso"> <label for="emoc-ansioso">Ansioso</label>
+                <input type="checkbox" id="emoc-agressivo"> <label for="emoc-agressivo">Agressivo</label>
+                <input type="text" placeholder="Outros">
+            </div>
+        </div>
+
+        <div class="form-group full-width">
+            <label for="inspecao">Inspeção (Postura, Marcha, Acessórios):</label>
+            <textarea id="inspecao" rows="2" placeholder="Ex: Paciente com anteriorização de tronco..."></textarea>
+        </div>
+
+        <div class="form-group full-width">
+            <label for="palpacao">Palpação (Trofo e Tônus, Dor):</label>
+            <textarea id="palpacao" rows="2"
+                placeholder="Ex: Hipotrofia em vasto medial, dor à palpação em L5/S1..."></textarea>
+        </div>
+
+        <div class="form-group full-width">
+            <label for="adm">Amplitude de Movimento (ADM):</label>
+            <textarea id="adm" rows="2" placeholder="Ex: Limitada para flexão/extensão de joelho..."></textarea>
+        </div>
+
+        <div class="form-group full-width">
+            <label for="forca">Força Muscular:</label>
+            <textarea id="forca" rows="2"
+                placeholder="Ex: Grau 4 em flexores de quadril, limitado para flexão..."></textarea>
+        </div>
+    </fieldset>
+
+    <fieldset class="form-section">
+        <legend>4. Testes Ortopédicos Específicos</legend>
+        <div class="form-group full-width">
+            <textarea id="testes-ortopedicos" rows="3"
+                placeholder="Ex: Teste de Lasègue positivo, Teste de Neer negativo."></textarea>
+        </div>
+    </fieldset>
+
+    <fieldset class="form-section">
+        <legend>5. Avaliação da Intensidade da Dor (EVA)</legend>
+        <div class="form-group full-width pain-scale">
+            <label>Selecione a intensidade da dor (0 a 10): <span id="painValue">5</span></label>
+            <input type="range" id="eva-scale" min="0" max="10" value="5"
+                oninput="document.getElementById('painValue').textContent = this.value">
+            <div class="scale-labels">
+                <span>0 (Nenhuma)</span>
+                <span>10 (Intensa)</span>
+            </div>
+        </div>
+    </fieldset>
+
+    <fieldset class="form-section">
+        <legend>6. Plano Terapêutico</legend>
+        <div class="form-group full-width">
+            <label for="objetivos">Objetivos do Tratamento (Curto, Médio e Longo Prazo):</label>
+            <textarea id="objetivos" rows="4"></textarea>
+        </div>
+    </fieldset>
+
+    <fieldset class="form-section">
+        <legend>7. Observações</legend>
+        <div class="form-group full-width">
+            <textarea id="observacoes" rows="3"></textarea>
+        </div>
+    </fieldset>
+
+    <fieldset class="form-section final-diagnostico">
+        <legend>Diagnósticos Finais</legend>
+        <div class="form-group full-width">
+            <label for="diagnostico-clinico">Diagnóstico Clínico (Médico):</label>
+            <input type="text" id="diagnostico-clinico" placeholder="Já preenchido no cadastro">
+        </div>
+        <div class="form-group full-width">
+            <label for="diagnostico-fisio">Diagnóstico Fisioterapêutico (Cinesiológico-Funcional):</label>
+            <textarea id="diagnostico-fisio" rows="2" placeholder="O diagnóstico do estagiário / supervisor"></textarea>
+        </div>
+    </fieldset>
+
+    <button type="submit" class="save-button">Salvar Avaliação</button>
+</section>

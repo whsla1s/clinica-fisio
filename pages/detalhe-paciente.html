@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes do Paciente | Clínica de Estágio</title>
+    <link rel="stylesheet" href="../shared/css/global.css">
+    <link rel="stylesheet" href="../shared/css/sidebar.css">
+    <link rel="stylesheet" href="../components/prontuarios/prontuario-base.css">
+    <link rel="stylesheet" href="detalhe-paciente.css">
+</head>
+
+<body>
+    <div class="app-container">
+        <aside id="sidebar" class="sidebar">...</aside>
+
+        <main class="content-area">
+            <header>
+                <h1 id="patientNameHeader">Detalhes do Paciente: [Nome]</h1>
+                <p class="patient-id">Prontuário: <span id="patientId">001</span> | Diagnóstico Clínico: <span
+                        id="diagClinico">Artrose de Joelho</span></p>
+            </header>
+
+            <div class="main-content">
+
+                <nav class="patient-tabs">
+                    <button class="tab-button active" onclick="openTab('info')">Identificação</button>
+                    <button class="tab-button" onclick="openTab('avaliacao')">Avaliação Inicial (Prontuário)</button>
+                    <button class="tab-button" onclick="openTab('evolucao')">Fichas de Evolução</button>
+                    <button class="tab-button" onclick="openTab('plano')">Plano Terapêutico/Diagnóstico</button>
+                </nav>
+
+                <div id="tabContent">
+
+                    <div id="info" class="tab-content active">
+                        <h2>Identificação do Paciente</h2>
+                        <p><strong>Nome Completo:</strong> Ana Silva</p>
+                        <p><strong>Data de Nasc.:</strong> 20/05/1957 | **Idade:** 68</p>
+                        <p><strong>Telefone:</strong> (XX) XXXX-XXXX</p>
+                        <button class="button-secondary">Editar Dados Cadastrais</button>
+                    </div>
+
+                    <div id="avaliacao" class="tab-content">
+                        <h2>Avaliação Inicial</h2>
+                        <div class="prontuario-selector">
+                            <label>Selecione o Tipo de Prontuário:</label>
+                            <select id="prontuarioType" onchange="loadProntuario()">
+                                <option value="">-- Selecione --</option>
+                                <option value="ortopedica">Ortopédico</option>
+                                <option value="geriatrica">Geriátrico</option>
+                                <option value="neurofuncional">Neurofuncional Adulto</option>
+                            </select>
+                        </div>
+                        <div id="prontuario-container">
+                            <p class="placeholder-text">Selecione o tipo de prontuário para visualizá-lo ou preenchê-lo.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div id="evolucao" class="tab-content">
+                        <h2>Histórico de Evoluções</h2>
+                        <button class="button-primary" onclick="addNewEvolution()">+ Nova Evolução</button>
+
+                        <div id="evolucao-history" class="history-list">
+                            <div class="evolution-entry">
+                                <h3>Sessão de 28/10/2025</h3>
+                                <p><strong>Subjetivo:</strong> Relata menos dor (EVA 3). Bom humor.</p>
+                                <p><strong>Intervenção:</strong> Fortalecimento com 1kg e treino de equilíbrio em
+                                    superfície instável.</p>
+                                <a href="#">Ver Detalhes/Imprimir</a>
+                            </div>
+                        </div>
+
+                        <div id="nova-evolucao-container" style="display: none;">
+                        </div>
+                    </div>
+
+                    <div id="plano" class="tab-content">
+                        <h2>Plano Terapêutico e Diagnósticos</h2>
+                        <p>Aqui você pode ver o resumo dos diagnósticos clínicos/fisioterapêuticos e os objetivos de
+                            tratamento (C/M/L prazo) definidos na avaliação inicial.</p>
+                    </div>
+
+                </div>
+            </div>
+
+            <footer class="app-footer">...</footer>
+        </main>
+    </div>
+
+    <script src="../shared/js/menu-data.js"></script>
+    <script src="../shared/js/main.js"></script>
+    <script>
+        // JS para gerenciamento das abas
+        function openTab(tabName) {
+            const tabs = document.querySelectorAll('.tab-content');
+            const buttons = document.querySelectorAll('.tab-button');
+
+            tabs.forEach(tab => tab.classList.remove('active'));
+            buttons.forEach(button => button.classList.remove('active'));
+
+            document.getElementById(tabName).classList.add('active');
+            document.querySelector(`.tab-button[onclick*="${tabName}"]`).classList.add('active');
+        }
+
+        // JS para carregar o prontuário selecionado
+        function loadProntuario() {
+            const type = document.getElementById('prontuarioType').value;
+            const container = document.getElementById('prontuario-container');
+
+            if (type) {
+                // Em um protótipo, você simularia o carregamento do arquivo HTML
+                // Se estivéssemos usando um framework ou backend, seria uma requisição AJAX
+                container.innerHTML = `<p>Carregando prontuário **${type.toUpperCase()}**...</p>`;
+
+                // Simulação de carregamento de conteúdo (usando fetch ou simples substituição)
+                fetch(`../components/prontuarios/${type}.html`)
+                    .then(response => {
+                        if (response.ok) return response.text();
+                        throw new Error('Prontuário não encontrado.');
+                    })
+                    .then(html => {
+                        container.innerHTML = html;
+                    })
+                    .catch(error => {
+                        container.innerHTML = `<p class="error-text">Erro ao carregar prontuário: ${error.message}</p>`;
+                    });
+
+            } else {
+                container.innerHTML = '<p class="placeholder-text">Selecione o tipo de prontuário para visualizá-lo ou preenchê-lo.</p>';
+            }
+        }
+
+        // JS para abrir o formulário de Nova Evolução
+        function addNewEvolution() {
+            // Em um ambiente real, você carregaria o formulário de evolucao.html
+            document.getElementById('nova-evolucao-container').style.display = 'block';
+            document.getElementById('nova-evolucao-container').innerHTML = `
+                <p>Carregando formulário de Nova Evolução...</p>
+                <div class="prontuario-form evolucao-form">
+                    </div>
+            `;
+            // Idealmente, você chamaria a função loadProntuario, mas para evolucao.html
+            // e injetaria no 'nova-evolucao-container'.
+            // Por simplicidade do mockup, apenas mostramos a seção.
+        }
+
+        // Inicializa a primeira aba
+        document.addEventListener('DOMContentLoaded', () => {
+            openTab('info');
+        });
+    </script>
+</body>
+
+</html>
