@@ -1,0 +1,201 @@
+<section class="prontuario-form neuro-form">
+    <h2>Prontuário Neurofuncional Adulto - Ficha de Avaliação</h2>
+
+    <fieldset class="form-section">
+        <legend>1. Anamnese</legend>
+        <div class="form-group full-width"><label for="queixa-principal-neuro">Queixa Principal:</label><textarea
+                id="queixa-principal-neuro" rows="2"></textarea></div>
+        <div class="form-group full-width"><label for="hda-neuro">História da Doença Atual (HDA):</label><textarea
+                id="hda-neuro" rows="3"></textarea></div>
+        <div class="form-group full-width"><label for="hdp-neuro">História da Doença Pregressa (HDP):</label><textarea
+                id="hdp-neuro" rows="2"></textarea></div>
+
+        <div class="form-group half-width"><label for="comorbidades-neuro">Comorbidades:</label><input type="text"
+                id="comorbidades-neuro"></div>
+        <div class="form-group half-width"><label for="af-neuro">Antecedentes Familiares (AF):</label><input type="text"
+                id="af-neuro"></div>
+        <div class="form-group full-width"><label for="medicamentos-neuro">Medicamentos em uso:</label><input
+                type="text" id="medicamentos-neuro"></div>
+
+        <div class="form-group half-width checkbox-group">
+            <label>Quedas nos últimos 12 meses?</label>
+            <input type="radio" id="queda-sim-neuro" name="queda-12m-neuro" value="Sim"> <label
+                for="queda-sim-neuro">Sim</label>
+            <input type="radio" id="queda-nao-neuro" name="queda-12m-neuro" value="Não" checked> <label
+                for="queda-nao-neuro">Não</label>
+            <input type="number" placeholder="Quantas?" min="0" style="width: 80px; margin-left: 10px;">
+        </div>
+
+        <div class="form-group half-width vitals-group">
+            <label>Sinais Vitais:</label>
+            <div>
+                PA: <input type="text" placeholder="x/x mmHg">
+                FC: <input type="text" placeholder="x bpm">
+                SpO2: <input type="text" placeholder="x %">
+            </div>
+        </div>
+        <div class="form-group full-width"><label for="exames-complementares-neuro">Exames
+                Complementares:</label><textarea id="exames-complementares-neuro" rows="1"></textarea></div>
+    </fieldset>
+
+    <fieldset class="form-section">
+        <legend>2. Exame Físico</legend>
+
+        <div class="form-group half-width checkbox-group">
+            <label>Nível de Consciência:</label>
+            <input type="checkbox" id="lucido-orientado-neuro"> <label
+                for="lucido-orientado-neuro">Lúcido-Orientado</label><br>
+            <input type="checkbox" id="desorientado-neuro"> <label for="desorientado-neuro">Desorientado</label>
+            <input type="checkbox" id="momentos-desor-neuro"> <label for="momentos-desor-neuro">Lúcido com momentos de
+                desorientação</label>
+            <input type="text" placeholder="Outros" style="margin-top: 5px;">
+        </div>
+
+        <div class="form-group half-width checkbox-group">
+            <label>Estado Emocional:</label>
+            <div><input type="checkbox" id="emoc-calmo-neuro"> <label for="emoc-calmo-neuro">Calmo</label> <input
+                    type="checkbox" id="emoc-agitado-neuro"> <label for="emoc-agitado-neuro">Agitado</label> <input
+                    type="checkbox" id="emoc-depressivo-neuro"> <label for="emoc-depressivo-neuro">Depressivo</label>
+            </div>
+            <div><input type="checkbox" id="emoc-ansioso-neuro"> <label for="emoc-ansioso-neuro">Ansioso</label> <input
+                    type="checkbox" id="emoc-agressivo-neuro"> <label for="emoc-agressivo-neuro">Agressivo</label>
+                <input type="text" placeholder="Outros"></div>
+        </div>
+
+        <div class="form-group full-width"><label for="inspecao-neuro">Inspeção (Postura, Alterações):</label><textarea
+                id="inspecao-neuro" rows="1"></textarea></div>
+        <div class="form-group full-width"><label for="palpacao-neuro">Palpação (Trofo, Tônus -
+                Espasticidade/Rigidez):</label><textarea id="palpacao-neuro" rows="1"></textarea></div>
+        <div class="form-group full-width"><label for="adm-neuro">ADM:</label><textarea id="adm-neuro"
+                rows="1"></textarea></div>
+        <div class="form-group full-width"><label for="forca-neuro">Força Muscular:</label><textarea id="forca-neuro"
+                rows="1"></textarea></div>
+
+        <div class="form-group full-width reflexos-group">
+            <label>2.8 Reflexos Profundos:</label>
+            <div class="reflex-grid">
+                <div>
+                    Biciptal: <input type="text">
+                    Estilorradial: <input type="text">
+                </div>
+                <div>
+                    Triciptal: <input type="text">
+                    Patelar: <input type="text">
+                </div>
+                <div>
+                    Aquileu: <input type="text">
+                </div>
+            </div>
+            <p class="hint">Use a escala 0 a 4+ (0=Ausente, 2+=Normal).</p>
+        </div>
+
+        <div class="form-group full-width reflexos-group">
+            <label>2.9 Reflexos Superficiais:</label>
+            <p class="hint">F: Flexão | E: Extensão | Babinski (+)</p>
+            <div class="reflex-grid">
+                <div>Cutâneo Plantar: <input type="text" placeholder="F ou E / Babinski"></div>
+                <div>Cutâneo Abdominal: <input type="text"></div>
+            </div>
+        </div>
+    </fieldset>
+
+    <fieldset class="form-section">
+        <legend>3. Avaliação Funcional</legend>
+
+        <div class="form-group full-width"><label for="motricidade-neuro">3.10 Motricidade
+                Involuntária:</label><textarea id="motricidade-neuro" rows="1"></textarea></div>
+
+        <div class="form-group full-width checklist-group">
+            <label>3.11 Coordenação (Presente ou Ausente):</label>
+            <div class="inline-checks">
+                <span>Index-Index:</span>
+                <input type="radio" name="index-index-neuro" value="+" id="ii-n+"><label for="ii-n+"> (+)</label>
+                <input type="radio" name="index-index-neuro" value="-" id="ii-n-"><label for="ii-n-"> (-)</label>
+            </div>
+            <div class="inline-checks">
+                <span>Index-Nariz:</span>
+                <input type="radio" name="index-nariz-neuro" value="+" id="in-n+"><label for="in-n+"> (+)</label>
+                <input type="radio" name="index-nariz-neuro" value="-" id="in-n-"><label for="in-n-"> (-)</label>
+            </div>
+            <div class="inline-checks">
+                <span>Calcanhar-Joelho:</span>
+                <input type="radio" name="calcanhar-joelho-neuro" value="+" id="cj-n+"><label for="cj-n+"> (+)</label>
+                <input type="radio" name="calcanhar-joelho-neuro" value="-" id="cj-n-"><label for="cj-n-"> (-)</label>
+            </div>
+        </div>
+
+        <div class="form-group full-width checklist-group">
+            <label>3.12 Equilíbrio:</label>
+            <div class="inline-checks">
+                <span>Tronco:</span>
+                <input type="radio" name="tronco-neuro" value="bom"><label for="tronco-n-bom"> Bom</label>
+                <input type="radio" name="tronco-neuro" value="regular"><label for="tronco-n-reg"> Regular</label>
+                <input type="radio" name="tronco-neuro" value="ruim"><label for="tronco-n-ruim"> Ruim</label>
+            </div>
+            <div class="inline-checks">
+                <span>Romberg:</span>
+                <input type="radio" name="romberg-neuro" value="positivo"><label for="romberg-n-pos"> Positivo</label>
+                <input type="radio" name="romberg-neuro" value="negativo"><label for="romberg-n-neg"> Negativo</label>
+            </div>
+            <div class="inline-checks">
+                <span>Romberg Sensibilizado:</span>
+                <input type="radio" name="romberg-sens-neuro" value="positivo"><label for="rs-n-pos"> Positivo</label>
+                <input type="radio" name="romberg-sens-neuro" value="negativo"><label for="rs-n-neg"> Negativo</label>
+            </div>
+        </div>
+
+        <div class="form-group full-width checkbox-group avds-group">
+            <label>3.13 AVDs (Atividades de Vida Diária):</label>
+            <input type="radio" id="avds-dep-neuro" name="avds-neuro" value="dependente"> <label
+                for="avds-dep-neuro">Dependente</label>
+            <input type="radio" id="avds-semi-neuro" name="avds-neuro" value="semi-independente"> <label
+                for="avds-semi-neuro">Semi-independente</label>
+            <input type="radio" id="avds-ind-neuro" name="avds-neuro" value="independente" checked> <label
+                for="avds-ind-neuro">Independente</label>
+        </div>
+
+        <div class="form-group full-width checkbox-group tug-group">
+            <label>3.14 Teste Funcional (TUG):</label>
+            <input type="radio" id="tug-10-neuro" name="tug-neuro" value="<10seg"> <label for="tug-10-neuro"> (&lt; 10
+                seg)</label>
+            <input type="radio" id="tug-10-19-neuro" name="tug-neuro" value="10-19seg"> <label for="tug-10-19-neuro">
+                (10 a 19 seg)</label>
+            <input type="radio" id="tug-20-29-neuro" name="tug-neuro" value="20-29seg"> <label for="tug-20-29-neuro">
+                (20 a 29 seg)</label>
+            <input type="radio" id="tug-30-neuro" name="tug-neuro" value=">30seg"> <label for="tug-30-neuro"> (+ 30
+                seg)</label>
+        </div>
+
+        <div class="form-group full-width">
+            <label for="marcha-neuro">3.15 Avaliação da Marcha:</label>
+            <textarea id="marcha-neuro" rows="2"></textarea>
+        </div>
+    </fieldset>
+
+    <fieldset class="form-section">
+        <legend>4. Avaliação da Intensidade da Dor (EVA)</legend>
+        <div class="form-group full-width pain-scale">
+            <label>Selecione a intensidade da dor (0 a 10): <span id="painValueNeuro">5</span></label>
+            <input type="range" id="eva-scale-neuro" min="0" max="10" value="5"
+                oninput="document.getElementById('painValueNeuro').textContent = this.value">
+            <div class="scale-labels"><span>0 (Nenhuma)</span><span>10 (Intensa)</span></div>
+        </div>
+    </fieldset>
+
+    <fieldset class="form-section">
+        <legend>5. Plano Terapêutico</legend>
+        <div class="form-group full-width">
+            <label for="objetivos-neuro">Objetivos do Tratamento (Curto, Médio e Longo Prazo):</label>
+            <textarea id="objetivos-neuro" rows="4"></textarea>
+        </div>
+    </fieldset>
+
+    <fieldset class="form-section">
+        <legend>6. Observações</legend>
+        <div class="form-group full-width">
+            <textarea id="observacoes-neuro" rows="3"></textarea>
+        </div>
+    </fieldset>
+
+    <button type="submit" class="save-button">Salvar Avaliação Neurofuncional</button>
+</section>

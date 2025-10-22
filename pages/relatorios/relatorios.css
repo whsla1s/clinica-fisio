@@ -1,0 +1,144 @@
+/* pages/relatorios.css */
+
+.content-area header h1 {
+    color: var(--cor-primaria);
+    margin-bottom: 25px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--cor-borda);
+}
+
+/* --- Painel de Filtros --- */
+.filters-panel {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.filters-panel label {
+    font-weight: 600;
+    color: var(--cor-texto-principal);
+}
+
+.filters-panel select {
+    padding: 8px 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.button-secondary {
+    background-color: var(--cor-secundaria);
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+
+.button-secondary:hover {
+    background-color: #00448a;
+}
+
+/* --- Grid de Relatórios/Gráficos --- */
+.reports-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr; /* 2/3 para o gráfico grande, 1/3 para o médio */
+    gap: 30px;
+}
+
+.chart-card {
+    background-color: white;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.chart-card h2 {
+    color: var(--cor-secundaria);
+    font-size: 1.3em;
+    border-bottom: 1px solid var(--cor-borda);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+/* Ajustes de Layout na Grid */
+.chart-card.large {
+    grid-column: 1 / 2; /* Ocupa a primeira coluna */
+    min-height: 400px;
+}
+
+.chart-card.medium {
+    grid-column: 2 / 3; /* Ocupa a segunda coluna */
+}
+/* Ocupar a segunda coluna inteira verticalmente (para telas grandes) */
+.chart-card.medium:nth-of-type(3) { 
+    grid-row: 2 / 3; 
+} 
+/* Em telas pequenas, voltaria a ser 1 coluna por linha automaticamente, mas a grid aqui força o layout 2fr 1fr */
+
+
+/* --- Estilos de Simulação de Gráfico (Mock-Chart) --- */
+.chart-container {
+    height: 100%;
+    min-height: 250px;
+    display: flex;
+    align-items: center; /* Centraliza o conteúdo da simulação */
+    justify-content: center;
+}
+
+/* Mock de Gráfico de Barras (Horizontal) */
+.bar-chart {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+    height: 300px;
+    border-left: 2px solid #ccc;
+    border-bottom: 2px solid #ccc;
+    padding: 10px;
+    gap: 15px;
+}
+.bar-chart {
+    /* Mudar para barras horizontais para melhor leitura de nomes */
+    flex-direction: row; 
+    align-items: flex-end;
+    justify-content: space-around;
+}
+
+.bar-item {
+    background-color: var(--cor-primaria);
+    width: 15%; /* Largura da barra */
+    min-height: 10px;
+    position: relative;
+    border-radius: 5px 5px 0 0;
+    transition: height 0.5s ease;
+}
+
+.bar-label {
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.85em;
+    color: var(--cor-texto-principal);
+    white-space: nowrap;
+    text-align: center;
+}
+
+/* Mocks simples para outros gráficos */
+.line-chart, .pie-chart {
+    text-align: center;
+    padding: 30px;
+    border: 1px dashed var(--cor-borda);
+    border-radius: 5px;
+    color: var(--cor-texto-secundario);
+    font-size: 1.1em;
+}
+.line-chart strong, .pie-chart strong { color: var(--cor-secundaria); }

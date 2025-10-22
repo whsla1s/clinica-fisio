@@ -1,0 +1,104 @@
+/* pages/dashboard.css */
+
+/* --- Layout Geral do Dashboard --- */
+
+.content-area header h1 {
+    color: var(--cor-primaria);
+    margin-bottom: 25px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--cor-borda);
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    gap: 30px; /* Espaçamento entre as seções (Funções Rápidas, Resumo) */
+}
+
+/* --- Seção de Funções Rápidas (Quick Actions) --- */
+
+.quick-actions h2, .daily-summary h2 {
+    color: var(--cor-texto-principal);
+    margin-bottom: 15px;
+    font-size: 1.5em;
+}
+
+.action-grid {
+    display: grid;
+    /* Adaptação: 3 colunas de tamanho igual. Ajuste conforme necessidade. */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+    gap: 20px;
+}
+
+.action-card {
+    display: block;
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    text-decoration: none;
+    color: var(--cor-texto-principal);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    text-align: center;
+}
+
+.action-card:hover {
+    transform: translateY(-5px); /* Efeito sutil ao passar o mouse */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.action-card span {
+    font-size: 3em; /* Tamanho grande para o ícone/emoji */
+    display: block;
+    margin-bottom: 10px;
+}
+
+.action-card h3 {
+    margin: 0;
+    font-size: 1.1em;
+    color: var(--cor-primaria);
+}
+
+/* --- Seção de Resumo Diário (Daily Summary) --- */
+
+.daily-summary {
+    /* Estilos para a seção de resumo (pode conter cards de estatísticas) */
+    margin-top: 20px;
+}
+
+/* Exemplo de Card de Estatísticas no Resumo (para quando for implementado) */
+.summary-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.summary-card {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.summary-card p {
+    color: var(--cor-texto-secundario);
+    font-size: 0.9em;
+}
+
+.summary-card strong {
+    display: block;
+    font-size: 2em;
+    color: var(--cor-secundaria);
+}
+
+
+/* --- Rodapé --- */
+
+.app-footer {
+    text-align: center;
+    padding: 15px 0;
+    margin-top: 50px;
+    border-top: 1px solid var(--cor-borda);
+    color: var(--cor-texto-secundario);
+    font-size: 0.85em;
+}
