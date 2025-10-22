@@ -1,0 +1,94 @@
+/* pages/pacientes.css */
+
+.content-area header h1 {
+    color: var(--cor-primaria);
+    margin-bottom: 25px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--cor-borda);
+}
+
+/* --- Barra de Ações (Busca e Cadastro) --- */
+.patients-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.search-input {
+    flex-grow: 1; /* Ocupa a maior parte do espaço */
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+    max-width: 500px;
+    margin-right: 20px;
+}
+
+.button-primary {
+    background-color: var(--cor-sucesso); /* Verde para o botão de 'Novo' */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.2s;
+}
+
+.button-primary:hover {
+    background-color: #1e7e34;
+}
+
+.button-primary span {
+    font-size: 1.2em;
+    margin-right: 5px;
+}
+
+/* --- Tabela de Pacientes --- */
+.patients-table-container {
+    overflow-x: auto; /* Garante scroll em telas menores */
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.styled-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.styled-table th, .styled-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid var(--cor-borda);
+}
+
+.styled-table th {
+    background-color: var(--cor-primaria);
+    color: white;
+    text-transform: uppercase;
+    font-size: 0.9em;
+}
+
+.styled-table tbody tr {
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.styled-table tbody tr:hover {
+    background-color: var(--cor-fundo-principal); /* Fundo cinza claro ao passar o mouse */
+}
+
+/* Estilo do link de ação */
+.action-link {
+    color: var(--cor-primaria);
+    text-decoration: none;
+    font-weight: bold;
+}
