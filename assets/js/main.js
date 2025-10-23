@@ -1,4 +1,4 @@
-// shared/js/main.js
+// assets/js/main.js
 
 document.addEventListener('DOMContentLoaded', () => {
     const menuContainer = document.getElementById('sidebarMenu');
@@ -9,7 +9,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         menuItems.forEach(item => {
             // Verifica se o link do menu corresponde à página atual para marcar como 'active'
-            const isActive = currentPath.includes(item.link);
+            // A comparação usa o link completo agora para maior precisão
+            const isActive = currentPath.includes(item.link); 
             const activeClass = isActive ? ' active' : '';
             
             menuHTML += `

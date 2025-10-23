@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pacientes | Clínica de Estágio</title>
-    <link rel="stylesheet" href="../shared/css/global.css">
-    <link rel="stylesheet" href="../shared/css/sidebar.css">
+    <link rel="stylesheet" href="../../assets/css/global.css">
+    <link rel="stylesheet" href="../../assets/css/sidebar.css">
     <link rel="stylesheet" href="pacientes.css">
 </head>
 
@@ -28,7 +28,7 @@
                 <div class="patients-actions">
                     <input type="text" id="searchPatient" placeholder="Buscar por Nome, Prontuário ou Diagnóstico..."
                         class="search-input">
-                    <a href="cadastro-paciente.html" class="button-primary">
+                    <a href="../paciente-cadastro/index.html" class="button-primary">
                         <span>+</span> Novo Cadastro
                     </a>
                 </div>
@@ -52,7 +52,8 @@
                                 <td>68</td>
                                 <td>Artrose de Joelho</td>
                                 <td>Estagiário A</td>
-                                <td><a href="detalhe-paciente.html?id=001" class="action-link">Ver Prontuário</a></td>
+                                <td><a href="../paciente-detalhe/index.html?id=001" class="action-link">Ver
+                                        Prontuário</a></td>
                             </tr>
                             <tr onclick="goToPatientDetail('002')">
                                 <td>002</td>
@@ -60,7 +61,8 @@
                                 <td>45</td>
                                 <td>AVC Isquêmico</td>
                                 <td>Estagiário B</td>
-                                <td><a href="detalhe-paciente.html?id=002" class="action-link">Ver Prontuário</a></td>
+                                <td><a href="../paciente-detalhe/index.html?id=002" class="action-link">Ver
+                                        Prontuário</a></td>
                             </tr>
                             <tr onclick="goToPatientDetail('003')">
                                 <td>003</td>
@@ -68,7 +70,8 @@
                                 <td>82</td>
                                 <td>Doença de Parkinson</td>
                                 <td>Estagiário A</td>
-                                <td><a href="detalhe-paciente.html?id=003" class="action-link">Ver Prontuário</a></td>
+                                <td><a href="../paciente-detalhe/index.html?id=003" class="action-link">Ver
+                                        Prontuário</a></td>
                             </tr>
                         </tbody>
                     </table>
@@ -81,12 +84,12 @@
         </main>
     </div>
 
-    <script src="../shared/js/menu-data.js"></script>
-    <script src="../shared/js/main.js"></script>
+    <script src="../../assets/js/menu-data.js"></script>
+    <script src="../../assets/js/main.js"></script>
     <script>
         // JS simples para simular o clique na linha
         function goToPatientDetail(id) {
-            window.location.href = `detalhe-paciente.html?id=${id}`;
+            window.location.href = `../paciente-detalhe/index.html?id=${id}`;
         }
 
         // JS simples para simular a busca

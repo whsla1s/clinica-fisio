@@ -1,12 +1,11 @@
-// shared/js/menu-data.js
+// assets/js/menu-data.js
 
 const menuItems = [
-    // Usamos apenas o nome do arquivo, pois a maioria das páginas está na mesma pasta (pages/)
-    { name: "Dashboard", icon: "🏠", link: "dashboard.html" },
-    { name: "Pacientes", icon: "👥", link: "pacientes.html" },
-    { name: "Agenda", icon: "📅", link: "agenda.html" },
-    // Link para a página de detalhes/prontuários (que contém o formulário de avaliação)
-    { name: "Prontuários", icon: "📝", link: "detalhe-paciente.html" }, 
-    { name: "Relatórios", icon: "📈", link: "relatorios.html" },
-    { name: "ADM", icon: "⚙️", link: "adm.html" },
+    // Caminhos relativos à pasta 'pages/'
+    { name: "Dashboard", icon: "🏠", link: "../dashboard/index.html" }, 
+    { name: "Pacientes", icon: "👥", link: "../pacientes/index.html" },
+    { name: "Agenda", icon: "📅", link: "../agenda/index.html" },
+    { name: "Prontuários", icon: "📝", link: "../paciente-detalhe/index.html" }, // Redirecionando para detalhes do paciente por ser o hub de prontuários
+    { name: "Relatórios", icon: "📈", link: "../relatorios/index.html" },
+    { name: "ADM", icon: "⚙️", link: "../adm/index.html" },
 ];

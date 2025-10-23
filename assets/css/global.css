@@ -1,4 +1,4 @@
-/* shared/css/global.css */
+/* assets/css/global.css */
 
 /* Definição de Variáveis de Cores (Paleta da Clínica) */
 :root {
@@ -31,12 +31,18 @@ body {
 /* Layout Principal (Após Login) */
 .app-container {
     display: flex;
-    min-height: 100vh;
 }
 
 /* Conteúdo Principal (Onde vai o Dashboard, Pacientes, etc.) */
 .content-area {
-    flex-grow: 1; /* Ocupa o espaço restante */
+    width: 100%; 
+    /* AJUSTE CRÍTICO: Garante que o conteúdo comece APÓS a sidebar fechada */
+    margin-left: var(--largura-sidebar-fechada); 
     padding: 20px;
-    transition: margin-left 0.3s ease; /* Transição para empurrar o conteúdo */
+    transition: margin-left 0.3s ease; 
+}
+
+/* AJUSTE CRÍTICO: Quando a sidebar ABRE, ela empurra o conteúdo */
+.sidebar:hover ~ .content-area {
+    margin-left: var(--largura-sidebar-aberta);
 }

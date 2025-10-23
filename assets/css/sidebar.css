@@ -1,4 +1,4 @@
-/* shared/css/sidebar.css */
+/* assets/css/sidebar.css */
 
 .sidebar {
     width: var(--largura-sidebar-fechada);
@@ -6,9 +6,12 @@
     color: white;
     padding-top: 20px;
     transition: width 0.3s ease;
-    overflow: hidden; /* Garante que o texto fique escondido quando fechada */
-    position: sticky;
+    overflow: hidden; 
+    
+    /* Configuração Crítica de Posicionamento */
+    position: fixed;
     top: 0;
+    left: 0;
     height: 100vh;
     z-index: 100;
 }
@@ -23,13 +26,13 @@
     padding: 10px 0;
     font-size: 1.2em;
     font-weight: bold;
-    white-space: nowrap; /* Impede que o texto quebre */
-    opacity: 0; /* Começa invisível */
+    white-space: nowrap; 
+    opacity: 0; 
     transition: opacity 0.3s ease;
 }
 
 .sidebar:hover .sidebar-header {
-    opacity: 1; /* Fica visível ao abrir */
+    opacity: 1; 
 }
 
 .sidebar-menu {
@@ -53,14 +56,14 @@
 
 .menu-item-icon {
     font-size: 1.5em;
-    width: 40px; /* Garante que o ícone tenha um espaço fixo */
+    width: 40px; 
     text-align: center;
-    flex-shrink: 0; /* Não diminui */
+    flex-shrink: 0; 
 }
 
 .menu-item-text {
     margin-left: 10px;
-    opacity: 0; /* Começa invisível */
+    opacity: 0; 
     transition: opacity 0.3s ease;
 }
 
